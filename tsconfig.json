@@ -8,7 +8,7 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "amd",
-    "target": "esnext",
+    "target": "es6",
     "sourceMap": true,
     "outFile": "./main.js",
     "removeComments": true,
@@ -33,5 +33,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-  }
+  },
+  "include": [
+    "ES6"
+  ]
 }

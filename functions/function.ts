@@ -5,7 +5,7 @@
         return hero;
     }
 
-    const activarMensaje = (): string => {
+    const activarMensaje = (x?: string): string => {
         return 'hola';
     }
 
