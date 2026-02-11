@@ -22,4 +22,8 @@
     }
 
     printAvenger(avengers);
+
+    const avengersArr: [string, string, number] = ["Ironman", "Spiderman", 20.1];
+    const [tony, spiderman, hulk] = avengersArr;
+    console.log(hulk)
 })();

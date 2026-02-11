@@ -35,6 +35,6 @@
     "skipLibCheck": true,
   },
   "include": [
-    "ES6"
+    "classes-v2"
   ]
 }

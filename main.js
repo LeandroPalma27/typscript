@@ -1,36 +1,50 @@
 "use strict";
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 (() => {
-    const avengers = {
-        nick: 'Samuel L. Jackson',
-        ironman: 'Robert Downey JR.',
-        activos: true,
-        poder: 1500
-    };
-    const { nick, ironman } = avengers;
-    console.log(nick);
-    const printAvenger = (_a) => {
-        var { ironman } = _a, resto = __rest(_a, ["ironman"]);
-        console.log(ironman);
-        console.log(resto);
-    };
-    printAvenger(avengers);
+    class Character {
+        constructor(age, name, power) {
+            this.age = age;
+            this.name = name;
+            this.power = power;
+            console.log('constructor character llamado!!');
+        }
+        getCharacterDetail() {
+            return `${this.name} (${this.age}) - ${this.power}!!!!`;
+        }
+    }
+    class Npc extends Character {
+        constructor(age, name, power, isAgresive) {
+            super(age, name, power);
+            this.isAgresive = isAgresive;
+            console.log('Constructor NPC llamado!!!!');
+        }
+        getNpcDetail() {
+            return super.getCharacterDetail().concat(" NPC");
+        }
+    }
+    const ballas = new Npc(25, "Jhon Dalas", "Gunshooter", true);
+    console.log(ballas);
+    console.log(ballas.getNpcDetail());
 })();
 (() => {
-    let a = 10;
-    const NOMBRE = "Leandro";
-    const getName = () => {
-        console.log('first');
-    };
+    class Avenger {
+        constructor(name, team, realName, avgAge = 35) {
+            this.name = name;
+            this.team = team;
+            this.realName = realName !== null && realName !== void 0 ? realName : "No tiene nombre real.";
+            Avenger.avgAge = avgAge;
+        }
+        bio() {
+            return `${this.name} (${this.team})!!!!`;
+        }
+        static getAvgAge() {
+            return this.name;
+        }
+    }
+    Avenger.avgAge = 35;
+    const ironman = new Avenger("Ironman", "Capi", "Tony Stark", 45);
+    console.log(ironman);
+    console.log(ironman.bio());
+    console.log(Avenger.avgAge);
+    console.log(Avenger.getAvgAge());
 })();
 //# sourceMappingURL=main.js.map
