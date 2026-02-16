@@ -35,6 +35,6 @@
     "skipLibCheck": true,
   },
   "include": [
-    "classes"
+    "classes-v2"
   ]
 }
